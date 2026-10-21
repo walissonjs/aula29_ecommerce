@@ -1,7 +1,23 @@
+import Home from "./pages/Home"
+import Header from "./components/shared/Header"
+import Footer from "./components/shared/Footer"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+
 function App() {
   return (
     <>
-      <h1>TESTANDO</h1>
+      <BrowserRouter>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/produtos" element={<p>Product</p>} />
+            <Route path="/login" element={<p>login</p>} />
+            <Route path="/carrinho" element={<p>Carrinho</p>} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }
