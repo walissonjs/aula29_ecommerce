@@ -12,6 +12,7 @@ const currency = new Intl.NumberFormat('pt-BR', {
 export default function Cart() {
 //   const { items, removeItem, updateQuantity, clearCart, total } = useCart()
 //   const { isAuthenticated } = useAuth()
+
   const location = useLocation()
   const navigate = useNavigate()
   const [purchaseCompleted, setPurchaseCompleted] = useState(false)
