@@ -51,3 +51,5 @@ function CarouselComponent() {
 }
 
 export default CarouselComponent;
+
+/* Outra forma: https://share.google/aimode/MiB1Rt8GxAB5qheEG */

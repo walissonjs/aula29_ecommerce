@@ -3,10 +3,12 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 import './ProductItem.css'
 
+/* Identificando a moeda local / Conversão */
 const currency = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
   currency: 'BRL',
 })
+/* ------------------------------------------------ */
 
 export default function ProductItem({ product }) {
 
@@ -29,6 +31,8 @@ export default function ProductItem({ product }) {
     </article>
   )
 }
+
+/* DEFINE OS CAMPOS COMO OBRIGATÓRIOS - COM VALIDAÇÃO E REQUERIMENTO */
 
 ProductItem.propTypes = {
   product: PropTypes.shape({

@@ -31,8 +31,29 @@ export default function CarProvider({ children }) {
         setItems([])
     }
 
+    function updateQuantity (productId, quantity) {
+        if (quantity < 1) {
+            removeItem(productId)
+            return
+        }
+        setItems ((currentItems) => currentItems.map((item) => (
+            item.id === productId
+            ? {...item, quantity}
+            : item
+        )))
+    }
 
-    return <CartContext.Provider>
+    const value = {
+        items,
+        addItems,
+        removeItem,
+        clearCart, 
+        updateQuantity,
+        itemCount: items.reduce((total, item) => total + item.quantity, 0),
+        total: items.reduce((total, item) => total + item.price * item.quantity, 0),
+    }
+
+    return <CartContext.Provider value={value}>
             {children}
     </CartContext.Provider>
 }
